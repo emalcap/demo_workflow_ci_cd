@@ -1,0 +1,38 @@
+name: Demo workflows 
+on:
+  push:
+    branches: [ main ]
+    
+# si hay mas de dos jobs cada jobs en servicod distinto
+jobs:
+  nombre_job_build:
+    runs-on: ubuntu-latest    
+    steps:
+    - name: Paso 1
+      run: echo "Hola mundo"
+    
+    - name: Paso 2
+      run: | 
+        echo "Nombre: Elmer"
+        echo "Apeliidos: Malca Palomino"
+      
+     # CON uses: - Reutiliza una acción existente
+    - name: Checkout código
+      uses: actions/checkout@v4
+
+    - name: Listar archivos y carpetas
+      run: |
+        echo "LISTADO COMPLETO:"
+        ls -la
+        
+#    - name: Instalar dependencias
+#      run: npm install
+    
+#    - name: Ejecutar tests
+#      run: npm test
+jobs:
+  nombre_job_build:
+    runs-on: ubuntu-latest    
+    steps:
+    - name: Paso 1 job 2
+      run: echo "Hola job 2"
