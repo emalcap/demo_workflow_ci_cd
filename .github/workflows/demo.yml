@@ -1,7 +1,9 @@
 name: Demo workflows 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
     
 # si hay mas de dos jobs cada jobs en servicod distinto
 jobs:
@@ -31,6 +33,7 @@ jobs:
 #    - name: Ejecutar tests
 #      run: npm test
   nombre_second-job:
+    needs: [nombre_job_build] # ternina nombre_job_build  empiesa el nombre_second-job
     runs-on: ubuntu-latest    
     steps:
     - name: Paso 1 job 2
