@@ -26,6 +26,8 @@ jobs:
       run: |
         echo "LISTADO COMPLETO:"
         ls -la
+    - name: Es incremental 
+    - run: ver cambios incremental  
         
 #    - name: Instalar dependencias
 #      run: npm install
