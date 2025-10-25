@@ -8,12 +8,12 @@ jobs:
     # ejecutar jos call-buil llamar construir puede tener otro nombre 
     call-build:
      # dede la raiz 
-        uses:  ./.github/workflow/build.yml        
+        uses:  ./.github/workflows/build.yml        
     call-test:
         # si se ejecuto call-build  cadena de dependencia
         # el nombredebe ser call-
         needs: call-build    
-        uses:  ./.github/workflow/test.yml
+        uses:  ./.github/workflows/test.yml
     call-deploy:   
         needs: call-test    
-        uses:  ./.github/workflow/deploy.yml
+        uses:  ./.github/workflows/deploy.yml
