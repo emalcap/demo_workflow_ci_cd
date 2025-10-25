@@ -1,0 +1,15 @@
+name: Deploy workflows
+# cuando me invoque otro workflow 
+# workflow_call
+on:
+    workflow_call
+     #puede tener input 
+jobs:
+    nombre_job_deploy:
+        runs-on: ubuntu-latest
+        steps:
+              # ejecurar lo de build yml
+          - name: Ckeckout code           
+            uses: actions/checkout@v4
+          - name: Deploy application 
+            run: echo "Deploying.........."
