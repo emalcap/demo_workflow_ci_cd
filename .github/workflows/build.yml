@@ -1,0 +1,21 @@
+name: Demo workflows
+# cuando me invoque otro workflow 
+# workflow_call
+on:
+    workflow_call
+     #puede tenere input 
+jobs:
+    nombre_build:
+        runs-on: ubuntu-latest
+        steps:
+            #bajar codigo del repositorio
+            - name: Ckeckout code            
+            #https://github.com/marketplace/actions/checkout
+              uses: actions/checkout@v4 
+            # no no nada en el mismo repository
+            # especificaciones para que sea repositorio 
+            # name: Setup node.js
+            - name: Buil Aplication 
+              run: echo "haciendo el build.."
+            - name: fecha hora nombre_build
+              run: date

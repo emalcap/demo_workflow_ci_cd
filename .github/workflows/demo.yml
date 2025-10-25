@@ -1,10 +1,14 @@
-name: Demo workflows 
+# nombre
+name: Demo workflows
+# cuando se ejecute 
+# en una rama o varias ramas [ "main","qa","dev-emalcap" ]
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-    
+# tareas job  nombre 
+# donde se ejecuta ubuntu es mejor verison -> pasos   
 # si hay mas de dos jobs cada jobs en servicod distinto
 jobs:
   nombre_job_build:
@@ -17,7 +21,8 @@ jobs:
       run: | 
         echo "Nombre: Elmer"
         echo "Apeliidos: Malca Palomino"
-      
+    - name: fecha hora nombre_job_build
+      run: date
      # CON uses: - Reutiliza una acción existente
     - name: Checkout código
       uses: actions/checkout@v4
@@ -40,3 +45,8 @@ jobs:
     steps:
     - name: Paso 1 job 2
       run: echo "Hola job 2"
+    - name: fecha hora nombre_second-job
+      run: date
+      # ejecurar lo de build yml
+    - name: Ckeckout code           
+      uses: actions/checkout@v4 
