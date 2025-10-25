@@ -12,7 +12,7 @@ jobs:
             - name: Ckeckout code            
             #https://github.com/marketplace/actions/checkout
               uses: actions/checkout@v4 
-            # no no nada en el mismo repository
+            # nada en el mismo repository
             # especificaciones para que sea repositorio 
             # name: Setup node.js
             - name: Buil Aplication 
